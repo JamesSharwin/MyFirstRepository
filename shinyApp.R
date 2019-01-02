@@ -1,4 +1,7 @@
 library(shiny)
+library(ggplot2)
+library(mc2d)
+library(sqldf)
 
 ui <- fluidPage(
   headerPanel("Bed pooling demonstration"), 
@@ -23,9 +26,7 @@ ui <- fluidPage(
 
 
 server <- function(input, output){
-  library(ggplot2)
-  library(mc2d)
-  library(sqldf)
+
   
   output$Plot2 <- renderPlot({
     vals <- rtriang(10000, input$losLow,input$losMid,input$losHigh)
