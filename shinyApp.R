@@ -13,7 +13,7 @@ ui <- fluidPage(
     "Length of Stay Distribution",
     numericInput("losLow","min",1),
     numericInput("losMid","median",6),
-    numericInput("losHigh","max",17),
+    numericInput("losHigh","max",122),
     "Capacity",
     numericInput("capacityMale","capacity - male",8),
     numericInput("capacityFemale","capacity - female",8)
@@ -24,9 +24,7 @@ ui <- fluidPage(
   )
 )
 
-
 server <- function(input, output){
-
   
   output$Plot2 <- renderPlot({
     vals <- rtriang(10000, input$losLow,input$losMid,input$losHigh)
